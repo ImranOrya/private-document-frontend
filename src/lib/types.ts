@@ -38,3 +38,4 @@ export interface UserPassword {
   newPassword: string;
   confirmPassword: string;
 }
+export type ReportTabType = "Type" | "Status" | "Urgency" | "Source" | "Reffer" | "Duration";

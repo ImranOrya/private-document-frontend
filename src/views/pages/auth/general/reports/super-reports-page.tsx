@@ -1,7 +1,12 @@
-import { useTranslation } from "react-i18next";
+import { ReportProvider } from "@/context/ReportContext";
+import ReportTabs from "./report-tabs";
+import ReportTabsHeader from "./report-tabs-header";
 
 export default function SuperReportsPage() {
-  const { t } = useTranslation();
-  // const { user, loading } = useAuthState();
-  return <section className="relative">SuperReportsPage</section>;
+  return (
+    <ReportProvider>
+      <ReportTabsHeader />
+      <ReportTabs />
+    </ReportProvider>
+  );
 }
