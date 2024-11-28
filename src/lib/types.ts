@@ -1,6 +1,7 @@
 import {
   Audit,
   DocumentModel,
+  Logs,
   SelectUserPermission,
   User,
 } from "@/database/tables";
@@ -130,6 +131,39 @@ export interface AuditFilter {
 }
 export interface PaginationAuditData {
   data: Audit[];
+  lastPage: number;
+  perPage: number;
+  currentPage: number;
+  totalItems: number;
+}
+
+//
+export interface LogData {
+  name: string;
+  data: any;
+}
+
+export type LogSort =
+  | "userid"
+  | "username"
+  | "errorcode"
+  | "exceptiontype"
+  | "ipaddress"
+  | "url";
+  
+export type LogSearch = "userid" | "username" | "ipaddress" | "errorcode" ;
+
+export interface LogFilter {
+  sort: LogSort;
+  order: Order;
+  search: {
+    column: LogSearch;
+    value: string;
+  };
+  date: DateObject[];
+}
+export interface PaginationLogData {
+  data: Logs[];
   lastPage: number;
   perPage: number;
   currentPage: number;

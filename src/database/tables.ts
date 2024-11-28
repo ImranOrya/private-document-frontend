@@ -134,3 +134,13 @@ export type Audit = {
   ipaddress: string;
   date: string;
 };
+
+
+export type Logs ={
+ userid:string;
+ username:string;
+ errorcode:string;
+  exceptiontype:string;
+  ipaddress:string;
+ url:string;
+}
